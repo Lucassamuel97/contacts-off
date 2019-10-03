@@ -1,0 +1,7 @@
+{
+  "name": "contacts_persistente",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
