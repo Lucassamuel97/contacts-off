@@ -8,7 +8,9 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { ContactsListPage } from '../pages/contacts-list/contacts-list';
+import { CreateContactPage } from '../pages/create-contact/create-contact';
 import { TabsPage } from '../pages/tabs/tabs';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,6 +23,7 @@ import { ContactsProvider } from '../providers/contacts/contacts';
     ContactPage,
     HomePage,
     ContactsListPage,
+    CreateContactPage,
     TabsPage
   ],
   imports: [
@@ -35,6 +38,7 @@ import { ContactsProvider } from '../providers/contacts/contacts';
     ContactPage,
     HomePage,
     ContactsListPage,
+    CreateContactPage,
     TabsPage
   ],
   providers: [
