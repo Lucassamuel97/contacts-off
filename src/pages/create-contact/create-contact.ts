@@ -17,15 +17,23 @@ import { ContactsProvider } from '../../providers/contacts/contacts';
 export class CreateContactPage {
   model: Contact;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public contactsProvider: ContactsProvider) {
     this.model = new Contact();
     this.model.name = 'Novo contato';
     this.model.gender = 'male';
   }
 
-  createContact(){
+  createContact() {
+    var data = { 'name': this.model.name, 'gender': this.model.gender };
+    this.contactsProvider.addContact(data)
+      .then((result: any) => {
+        console.log('Contato criado');
+      })
+      .catch((error: any) => {
+        console.log(error);
+      });
   }
-  
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreateContactPage');
   }
