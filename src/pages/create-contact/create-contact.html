@@ -11,5 +11,16 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Name</ion-label>
+      <ion-input type="text" name="name" [(ngModel)]="model.name"></ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-label stacked>Gender</ion-label>
+      <ion-input type="text" name="gender" [(ngModel)]="model.gender"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button block (click)="createContact()">Criar contato</button>
 </ion-content>
