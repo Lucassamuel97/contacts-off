@@ -30,6 +30,34 @@ export class ContactsProvider {
             return this.storage.set(STORAGE_KEY, [data]);
           }
     });
-}
+  }
 
+  getContact(id: number) {
+    let resultado: any;
+    return this.getContacts().then(result => {
+      if (result) {
+        result.forEach(element => {
+          if (element.id == id) {
+            resultado = element;
+          }
+        });
+        return resultado;
+      }
+    });
+  }
+
+  destroyContact(id: number) {
+    return this.getContacts().then(result => {
+      if (result) {
+        for (let index = 0; index < result.length; index++) {
+          if (result[index].id == id) {
+            result.splice(index, 1);
+            return this.storage.set(STORAGE_KEY, result);
+          }     
+        }
+      }
+    });
+  }
+
+  
 }
