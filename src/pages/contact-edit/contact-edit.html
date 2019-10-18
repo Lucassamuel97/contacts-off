@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ContactEditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>contact-edit</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-content padding>
+        <ion-list>
+          
+          <ion-item>
+            <ion-label stacked>Name</ion-label>
+            <ion-input type="text" name="name" [(ngModel)]="model.name"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label stacked>Gender</ion-label>
+            <ion-input type="text" name="gender" [(ngModel)]="model.gender"></ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label stacked>Birthday</ion-label>
+            <ion-input type="date" name="birthday" [(ngModel)]="model.birthday"></ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label stacked>Employed</ion-label>
+            <ion-checkbox type="checkbox" value="1" [(ngModel)]="model.employed" ></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Salary</ion-label>
+            <ion-input type="text" name="salary" [(ngModel)]="model.salary"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <img src="{{model.photo}}" />
+          </ion-item>
+          
+          <ion-item>
+            <button ion-button large block (click)="takePicture()"> 
+              Câmera
+            </button>
+          </ion-item>
+      
+        </ion-list>
+        <button ion-button block color="primary" (click)="saveContact()">Salvar</button>
+      </ion-content>
+</ion-content>

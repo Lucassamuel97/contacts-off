@@ -22,10 +22,10 @@ export class ContactsProvider {
   addContact(data){
     return this.getContacts().then(result => {
         if (result) {
-            data['id'] = result.length + 1;
+            data['id'] = result[result.length - 1].id + 1;
             result.push(data);
             return this.storage.set(STORAGE_KEY, result);
-          } else {
+          }else{
             data['id'] = 1;
             return this.storage.set(STORAGE_KEY, [data]);
           }
@@ -59,5 +59,16 @@ export class ContactsProvider {
     });
   }
 
-  
+  updateContact(id: number, data) {
+    return this.getContacts().then(result => {
+      if (result) {
+        for (let index = 0; index < result.length; index++) {
+          if (result[index].id == id) {
+            result.splice(index, 1, data);
+            return this.storage.set(STORAGE_KEY, result);
+          }     
+        }
+      }
+    });
+  }
 }
