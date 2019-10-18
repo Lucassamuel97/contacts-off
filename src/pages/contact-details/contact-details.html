@@ -11,10 +11,20 @@
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf="contact" text-center>
-    <ion-item>
-      <h2>{{contact.name}}</h2>
-      <p>{{contact.gender}}</p>
-    </ion-item>
-  </div>
+  <ion-content padding>
+    <div *ngIf="contact" text-center>
+      <ion-card>
+        <img src="{{contact.photo}}"/>
+        <ion-card-content>
+          <ion-card-title>  
+            <h2>{{contact.name}}</h2>
+            </ion-card-title>
+            <p>{{contact.gender}}</p>
+            <p>{{contact.birthday}}</p>
+            <p>{{contact.employed}}</p>
+            <p>{{contact.salary}}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-content>
 </ion-content>
